@@ -7,7 +7,7 @@ A documentação oficial informa que as APIs front são públicas, exigem o head
 ## Instalação
 
 ```bash
-npm install @uappi/sdk-front
+npm install @rodrigoaraujotl/sdk-uappi
 ```
 
 > Enquanto o pacote não estiver publicado, use este repositório como workspace/package local no projeto Next.js.
@@ -22,7 +22,7 @@ npm install @uappi/sdk-front
 ## Uso básico
 
 ```ts
-import { UappiClient } from '@uappi/sdk-front';
+import { UappiClient } from '@rodrigoaraujotl/sdk-uappi';
 
 export const uappi = new UappiClient({
   baseUrl: process.env.UAPPI_API_URL!, // Ex.: https://sua-loja.com.br/api
@@ -55,7 +55,7 @@ export default async function BrandsPage() {
 
 ```ts
 import { cookies } from 'next/headers';
-import { UappiClient } from '@uappi/sdk-front';
+import { UappiClient } from '@rodrigoaraujotl/sdk-uappi';
 
 export async function getCart() {
   const session = cookies().get('uappi-session')?.value;
@@ -117,7 +117,7 @@ await uappi.get('/v2/front/brands');
 Respostas HTTP fora da faixa 2xx lançam `UappiApiError` com status, payload e `Request-Id` quando retornado pela API.
 
 ```ts
-import { UappiApiError } from '@uappi/sdk-front';
+import { UappiApiError } from '@rodrigoaraujotl/sdk-uappi';
 
 try {
   await uappi.front.checkout.getCart();
