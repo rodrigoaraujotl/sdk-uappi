@@ -1,5 +1,5 @@
 {
-  "name": "@uappi/sdk-front",
+  "name": "@rodrigoaraujotl/sdk-uappi",
   "version": "0.1.0",
   "description": "SDK TypeScript compatível com Next.js para consumo das APIs Front v2 da Uappi.",
   "type": "module",
@@ -21,7 +21,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
-    "test": "rm -rf .test-build && tsc -p tsconfig.test.json && node --test test/**/*.test.mjs"
+    "test": "rm -rf .test-build && tsc -p tsconfig.test.json && node --test test/",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "keywords": [
     "uappi",
@@ -30,7 +31,11 @@
     "nextjs",
     "typescript"
   ],
-  "author": "",
+  "author": "Rodrigo Araújo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigoaraujotl/sdk-uappi"
+  },
   "license": "MIT",
   "peerDependencies": {
     "typescript": ">=5.0.0"
@@ -42,5 +47,8 @@
   },
   "devDependencies": {
     "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=20.11"
   }
 }
