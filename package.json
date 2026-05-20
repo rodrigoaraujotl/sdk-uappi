@@ -1,6 +1,6 @@
 {
   "name": "@rodrigoaraujotl/sdk-uappi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SDK TypeScript compatível com Next.js para consumo das APIs Front v2 da Uappi.",
   "type": "module",
   "main": "./dist/index.js",
